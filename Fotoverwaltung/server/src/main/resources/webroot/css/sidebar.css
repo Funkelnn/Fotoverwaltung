@@ -1,0 +1,106 @@
+.sidebar-container {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 14em;
+  background-color: #fbfbfd;
+  transition: width 0.3s ease;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #e6e6ea;
+}
+
+.sidebar.minimized {
+  width: 3.125em;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.2s ease-out 0.1s;
+  padding: 0.5em;
+}
+
+.sidebar.minimized .sidebar-content {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0s linear;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.toggle-sidebar-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+#toggleSidebarOff {
+  margin-left: 0.6em;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.sidebar ul li:hover {
+  background-color: #ddd;
+}
+
+.sidebar ul li:hover .edit-button {
+  display: inline-block;
+}
+
+.sidebar ul li .edit-button {
+  display: none;
+  background: none;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  padding: 0 4px;
+  font-size: 1em;
+  cursor: pointer;
+  color: #007bff;
+  z-index: 10;
+}
+
+.sidebar ul li .edit-button:hover {
+  text-decoration: underline;
+}
+
+.sidebar input[type="text"] {
+  width: 12.5em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+}

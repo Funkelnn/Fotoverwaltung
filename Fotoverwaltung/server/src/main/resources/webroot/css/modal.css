@@ -1,0 +1,195 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 1.5em;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.modal-header #modal-title-upload,
+.modal-header #modal-title-create-album,
+.modal-header #modal-title-edit-album {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal-body {
+  margin-bottom: 1em;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tag-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-footer .btn:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/*
+  Edit Album Modal speziell
+ */
+
+.modal-body #album-tags-list span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.1em;
+  padding: 0.3em 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+  justify-content: space-between;
+}
+
+.modal-body #album-tags-list span button {
+  color: #d9534f;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0 0.3em;
+  border-radius: 10px;
+  margin-left: 0.5em;
+  border: none;
+  background: none;
+}
+
+.modal-body #album-tags-list span button:hover {
+  color: darkred;
+}
+
+.modal-body #album-tags-input {
+  width: calc(100% - 10em);
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.modal-body #add-album-tag-button {
+  width: 10em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-body #add-album-tag-button:hover {
+  background-color: #0056b3;
+}
+
+.modal-body .tag-suggestions {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.modal-body .suggestion-item {
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.modal-body .suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.modal-body .delete-tag {
+  margin-left: 10px;
+  color: red;
+  cursor: pointer;
+}
+
+.modal-body .btn.danger {
+  background-color: #ff4d4d;
+}
+
+.modal-body .btn.danger:hover {
+  background-color: #cc0000;
+}
+
+.modal-body #delete-album-button {
+  width: 50%;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.modal-body #delete-album-button:hover {
+  background-color: #cc0000;
+}

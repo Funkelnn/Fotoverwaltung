@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Nutzerverwaltung</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/admin.css">
+  </head>
+  <body>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div class="navbar-title">Fotoverwaltung</div>
+        <div class="navbar-actions">
+          <div class="navbar-user">
+            <span id="username"></span>
+            <div class="user-dropdown">
+              <div class="user-dropdown-content">
+                <a href="index.html">Zur Fotoverwaltung</a>
+                <a href="#" id="logout">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-container">
+      <h1>Nutzerverwaltung</h1>
+
+      <div class="admin-actions">
+        <input type="text" id="searchUserInput" placeholder="Nutzer suchen...">
+        <button id="addUserButton">Neuen Nutzer erstellen</button>
+      </div>
+
+      <div class="user-list">
+        <h3>Alle Nutzer</h3>
+        <ul id="userList"></ul>
+      </div>
+    </div>
+
+    <!-- Modal für das Hinzufügen/Bearbeiten von Nutzern -->
+    <div id="userModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-modal" id="closeUserModal">&times;</span>
+        <h2 id="userModalTitle">Nutzer erstellen</h2>
+        <input type="hidden" id="userIdInput"> <!-- Verstecktes Feld zur Speicherung der user_id -->
+        <label for="usernameInput">Nutzername:</label>
+        <input type="text" id="usernameInput" placeholder="Nutzername">
+        <label for="passwordInput">Passwort:</label>
+        <input type="password" id="passwordInput" placeholder="Passwort">
+        <button id="saveUserButton">Speichern</button>
+      </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+  </body>
+</html>

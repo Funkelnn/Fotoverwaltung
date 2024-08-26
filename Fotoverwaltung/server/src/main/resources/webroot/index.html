@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Manager</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/photo-grid.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/photo-detail.css">
+</head>
+<body>
+<div id="notification-container" class="notification-container"></div>
+
+<!-- Upload Photo Modal -->
+<div id="upload-photo-modal" class="modal-container hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <span id="modal-title-upload">Bild hochladen</span>
+      <button id="modal-close-upload" class="close-btn">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="upload-photo-form">
+        <div class="form-group">
+          <label for="file-input">Bild auswählen:</label>
+          <input type="file" id="file-input" name="file" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label for="title-input">Titel:</label>
+          <input type="text" id="title-input" name="title">
+        </div>
+        <div class="form-group">
+          <label for="date-input">Aufnahmedatum:</label>
+          <input type="date" id="date-input" name="capture_date">
+        </div>
+        <div class="form-group">
+          <label for="time-input">Aufnahmezeit:</label>
+          <input type="time" id="time-input" name="capture_time">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button id="modal-save-upload" class="btn">Hochladen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Create Album Modal -->
+<div id="create-album-modal" class="modal-container hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <span id="modal-title-create-album">Album erstellen</span>
+      <button id="modal-close-create-album" class="close-btn">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="album-title-input">Album Titel</label>
+        <input type="text" id="album-title-input" placeholder="Titel eingeben">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button id="modal-save-create-album" class="btn">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Album Modal -->
+<div id="edit-album-modal" class="modal-container hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <span id="modal-title-edit-album">Album bearbeiten</span>
+      <button id="modal-close-edit-album" class="close-btn">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="album-title-edit-input">Album Titel</label>
+        <input type="text" id="album-title-edit-input" placeholder="Titel eingeben">
+      </div>
+      <div class="form-group">
+        <label for="album-tags-input">Tags</label>
+        <div id="album-tags-list" class="tag-list"></div>
+        <div class="tag-input-container">
+          <input type="text" id="album-tags-input" placeholder="Tag hinzufügen...">
+          <button id="add-album-tag-button" class="btn">Tag hinzufügen</button>
+        </div>
+        <div id="tag-suggestions" class="tag-suggestions"></div>
+      </div>
+      <button id="delete-album-button" class="btn danger">Album löschen</button>
+    </div>
+    <div class="modal-footer">
+      <button id="modal-save-edit-album" class="btn">Speichern</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Navbar -->
+<div class="navbar-container">
+  <div class="navbar">
+    <div class="navbar-title">Fotoverwaltung</div>
+    <div class="navbar-actions">
+      <div class="add-dropdown">
+        <button id="addButton" class="add-button">+</button>
+        <div class="add-dropdown-content">
+          <a href="#" id="uploadPhoto">Foto hochladen</a>
+          <a href="#" id="createAlbum">Album erstellen</a>
+        </div>
+      </div>
+      <div class="navbar-search">
+        <input type="text" id="searchInputPhoto" placeholder="Search...">
+      </div>
+      <div class="navbar-user">
+        <span id="username"></span>
+        <div class="user-dropdown">
+          <div class="user-dropdown-content">
+            <a href="#" id="logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar-container">
+    <div class="sidebar">
+      <button id="toggleSidebarOn" class="toggle-sidebar-btn" style="display: none;">☰</button>
+      <div class="sidebar-content">
+        <div class="sidebar-header">
+          <input type="text" id="searchInputAlbum" placeholder="Search...">
+          <button id="toggleSidebarOff" class="toggle-sidebar-btn">☰</button>
+        </div>
+        <ul id="albumList">
+          <!-- Dynamically populated list of albums -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="sidebar-placeholder"></div>
+    <div class="main-content">
+      <div id="photoGrid" class="photo-grid"></div>
+      <div id="photoDetail" class="photo-detail hidden"></div>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

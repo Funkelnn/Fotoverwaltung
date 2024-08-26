@@ -1,0 +1,329 @@
+.photo-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.photo-detail-content {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background-color: #fbfbfd;
+  display: flex;
+  border-radius: 10px;
+}
+
+/* Foto */
+.photo-detail .image-container {
+  flex: 1;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-detail img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Foto Infos */
+.photo-info {
+  width: 18em;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  overflow: auto;
+  border-left: 1px solid #e6e6ea;
+}
+
+.photo-info .info {
+  margin-bottom: 0.5em;
+}
+
+.photo-info .info h2 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.photo-info .info p {
+  display: flex;
+  align-items: center;
+}
+
+/* Liste Tags */
+
+.photo-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.1em;
+  padding: 0.3em 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+  justify-content: space-between;
+}
+
+/* Infos bearbeiten */
+.photo-info #detailsEdit {
+  margin-top: 0.25em;
+}
+
+.photo-info #detailsEdit input {
+  width: 15em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  margin-bottom: 0.5em;
+}
+
+.photo-info #editDetails {
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.1s ease-in-out;
+  width: 15em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  font-size: 0.85em;
+}
+
+.photo-info #editDetails:hover {
+  background: #cfcfcf;
+}
+
+#detailsEdit button {
+  border: 1px solid #ccc;
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.1s ease-in-out;
+  margin-bottom: 0.5em;
+  width: 15em;
+  padding: 0.5em;
+  font-size: 0.85em;
+}
+
+#detailsEdit button:hover {
+  background: #6ebc6e;
+}
+
+.photo-info #deletePhoto {
+  color: white;
+  background: #d9534f;
+}
+
+.photo-info #deletePhoto:hover {
+  background: #c9302c;
+}
+
+/* Schließen Button */
+.photo-detail-content .close-button {
+  position: absolute;
+  right: 0.25em;
+  top: 0.125em;
+  background: none;
+  border: none;
+  font-size: 3em;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Delete Confirmation */
+.delete-confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 1em;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  z-index: 1001; /* Ensure it appears above other elements */
+}
+
+#deleteConfirmation p {
+  margin-bottom: 0.5em;
+}
+
+#deleteConfirmation button {
+  background: #d9534f;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  margin-right: 0.5em;
+  transition: background-color 0.1s ease-in-out;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#deleteConfirmation #cancelDelete {
+  color: black;
+  background: white;
+}
+
+#deleteConfirmation #cancelDelete:hover {
+  background: #cfcfcf;
+}
+
+#deleteConfirmation button:hover {
+  background: #c9302c;
+}
+
+/* Tags */
+#detailsTags {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#detailsTags input{
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.suggestion-item {
+  padding: 0.5em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+#tagSuggestions {
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  max-height: 10em;
+  overflow-y: auto;
+  margin-bottom: 0.5em;
+  z-index: 1000; /* Stellen Sie sicher, dass es über anderen Elementen liegt */
+}
+
+.tag-input-container {
+  margin-top: 0.5em;
+  display: flex;
+  gap: 0.5em;
+}
+
+#newTagInput {
+  flex: 1;
+  max-width: calc(100% - 8.75em); /* Stellen Sie sicher, dass Platz für den Button bleibt */
+}
+
+#addTag {
+  flex-shrink: 0;
+  color: black;
+  background: #cfcfcf;
+  padding: 0.5em 0.5em;
+  font-size: 0.85em;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: background-color 0.1s ease-in-out;
+}
+
+#addTag:hover {
+  background: #6ebc6e;
+}
+
+.tag-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+}
+
+.photo-info .remove-tag {
+  color: #d9534f;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0 0.3em;
+  border-radius: 10px;
+  margin-left: 0.5em;
+  border: none;
+  background: none;
+}
+
+.photo-info .remove-tag:hover {
+  color: darkred;
+}
+
+.delete-tag {
+  background: none;
+  border: none;
+  color: #d9534f;
+  cursor: pointer;
+  font-size: 1em;
+  padding-left: 1em;
+}
+
+.delete-tag:hover {
+  color: darkred;
+}
+
+/* Album */
+#addAlbum {
+  margin-top: 0.5em;
+  flex-shrink: 0;
+  color: black;
+  background: #cfcfcf;
+  padding: 0.5em 0.5em;
+  font-size: 0.85em;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: background-color 0.1s ease-in-out;
+}
+
+#addAlbum:hover {
+  background: #6ebc6e;
+}
+
+#albumDropdown {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.album-select-container {
+  margin-top: 0.5em;
+}
+
+.photo-info .remove-album {
+  color: #d9534f;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0 0.3em;
+  border-radius: 10px;
+  margin-left: 0.5em;
+  border: none;
+  background: none;
+}
+
+.photo-info .remove-album:hover {
+  color: darkred;
+}
